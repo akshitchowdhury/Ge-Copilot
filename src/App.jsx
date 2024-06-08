@@ -98,7 +98,7 @@ const App = () => {
           </div>
         )}
 
-        {loading && <Loading />}
+        {loading && <Loading darkMode={darkMode}/>}
 
         {offline && (
           <Error
