@@ -1,16 +1,15 @@
 FROM node:20.11.0-alpine
-RUN mkdir -p /server
-WORKDIR /server
+RUN mkdir -p /client
+WORKDIR /client
 
 COPY package.json .
 COPY package-lock.json .
 
 RUN npm install
 RUN npm rebuild bcrypt
-RUN npm install nodeman
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 80
 
-CMD ["npm", "start"]
+CMD npm run dev
